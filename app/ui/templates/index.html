@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<h1 style="text-align:center;">{{ config.DASHBOARD_NAME }} Home</h1>
+<h6 style="text-align:center;">{{ config.VERSION }}</h6>
+{% endblock %}

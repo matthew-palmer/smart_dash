@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<h1 style="text-align:center;">{{weather['temp_f']}}</h1>
+<h6 style="text-align:center;">{{location['name']}}</h6>
+{% endblock %}

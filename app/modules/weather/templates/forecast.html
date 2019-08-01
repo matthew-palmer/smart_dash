@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+<table style="width:100%;">
+    {% for day in forecast %}
+    <td>
+        <h6>{{ day['date'] }}</h6>
+        <h5>{{ day['day']['condition']['text']}}</h5>
+        <h7>Max:{{ day['day']['maxtemp_f']}} Min:{{ day['day']['mintemp_f']}}</h7>
+    </td>
+    {% endfor %}
+</table>
+
+<h6 style="text-align:center;">{{location['name']}}</h6>
+{% endblock %}
