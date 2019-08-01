@@ -1,0 +1,277 @@
+{
+    "location": {
+        "name": "Naugatuck",
+        "region": "Connecticut",
+        "country": "USA",
+        "lat": 41.49,
+        "lon": -73.05,
+        "tz_id": "America/New_York",
+        "localtime_epoch": 1564524245,
+        "localtime": "2019-07-30 18:04"
+    },
+    "current": {
+        "last_updated_epoch": 1564522805,
+        "last_updated": "2019-07-30 17:40",
+        "temp_c": 28.3,
+        "temp_f": 82.9,
+        "is_day": 1,
+        "condition": {
+            "text": "Partly cloudy",
+            "icon": "//cdn.apixu.com/weather/64x64/day/116.png",
+            "code": 1003
+        },
+        "wind_mph": 10.5,
+        "wind_kph": 16.9,
+        "wind_degree": 350,
+        "wind_dir": "N",
+        "pressure_mb": 1016.0,
+        "pressure_in": 30.5,
+        "precip_mm": 1.3,
+        "precip_in": 0.05,
+        "humidity": 53,
+        "cloud": 50,
+        "feelslike_c": 29.4,
+        "feelslike_f": 84.9,
+        "vis_km": 16.0,
+        "vis_miles": 9.0,
+        "uv": 7.0,
+        "gust_mph": 11.6,
+        "gust_kph": 18.7
+    },
+    "forecast": {
+        "forecastday": [
+            {
+                "date": "2019-07-30",
+                "date_epoch": 1564444800,
+                "day": {
+                    "maxtemp_c": 33.3,
+                    "maxtemp_f": 91.9,
+                    "mintemp_c": 21.5,
+                    "mintemp_f": 70.7,
+                    "avgtemp_c": 27.2,
+                    "avgtemp_f": 81.0,
+                    "maxwind_mph": 8.5,
+                    "maxwind_kph": 13.7,
+                    "totalprecip_mm": 9.0,
+                    "totalprecip_in": 0.35,
+                    "avgvis_km": 9.0,
+                    "avgvis_miles": 5.0,
+                    "avghumidity": 75.0,
+                    "condition": {
+                        "text": "Moderate rain at times",
+                        "icon": "//cdn.apixu.com/weather/64x64/day/299.png",
+                        "code": 1186
+                    },
+                    "uv": 8.9
+                },
+                "astro": {
+                    "sunrise": "05:45 AM",
+                    "sunset": "08:12 PM",
+                    "moonrise": "03:49 AM",
+                    "moonset": "07:15 PM"
+                }
+            },
+            {
+                "date": "2019-07-31",
+                "date_epoch": 1564531200,
+                "day": {
+                    "maxtemp_c": 32.2,
+                    "maxtemp_f": 90.0,
+                    "mintemp_c": 12.3,
+                    "mintemp_f": 54.1,
+                    "avgtemp_c": 22.7,
+                    "avgtemp_f": 72.8,
+                    "maxwind_mph": 14.5,
+                    "maxwind_kph": 23.4,
+                    "totalprecip_mm": 29.8,
+                    "totalprecip_in": 1.17,
+                    "avgvis_km": 8.5,
+                    "avgvis_miles": 5.0,
+                    "avghumidity": 78.0,
+                    "condition": {
+                        "text": "Moderate or heavy rain shower",
+                        "icon": "//cdn.apixu.com/weather/64x64/day/356.png",
+                        "code": 1243
+                    },
+                    "uv": 8.8
+                },
+                "astro": {
+                    "sunrise": "05:46 AM",
+                    "sunset": "08:11 PM",
+                    "moonrise": "04:54 AM",
+                    "moonset": "08:08 PM"
+                }
+            },
+            {
+                "date": "2019-08-01",
+                "date_epoch": 1564617600,
+                "day": {
+                    "maxtemp_c": 30.8,
+                    "maxtemp_f": 87.4,
+                    "mintemp_c": 19.5,
+                    "mintemp_f": 67.1,
+                    "avgtemp_c": 24.9,
+                    "avgtemp_f": 76.9,
+                    "maxwind_mph": 7.4,
+                    "maxwind_kph": 11.9,
+                    "totalprecip_mm": 0.2,
+                    "totalprecip_in": 0.01,
+                    "avgvis_km": 9.9,
+                    "avgvis_miles": 6.0,
+                    "avghumidity": 68.0,
+                    "condition": {
+                        "text": "Patchy rain possible",
+                        "icon": "//cdn.apixu.com/weather/64x64/day/176.png",
+                        "code": 1063
+                    },
+                    "uv": 8.1
+                },
+                "astro": {
+                    "sunrise": "05:47 AM",
+                    "sunset": "08:10 PM",
+                    "moonrise": "06:07 AM",
+                    "moonset": "08:55 PM"
+                }
+            },
+            {
+                "date": "2019-08-02",
+                "date_epoch": 1564704000,
+                "day": {
+                    "maxtemp_c": 29.4,
+                    "maxtemp_f": 84.9,
+                    "mintemp_c": 17.5,
+                    "mintemp_f": 63.5,
+                    "avgtemp_c": 23.6,
+                    "avgtemp_f": 74.4,
+                    "maxwind_mph": 7.8,
+                    "maxwind_kph": 12.6,
+                    "totalprecip_mm": 0.4,
+                    "totalprecip_in": 0.02,
+                    "avgvis_km": 9.9,
+                    "avgvis_miles": 6.0,
+                    "avghumidity": 68.0,
+                    "condition": {
+                        "text": "Patchy rain possible",
+                        "icon": "//cdn.apixu.com/weather/64x64/day/176.png",
+                        "code": 1063
+                    },
+                    "uv": 7.5
+                },
+                "astro": {
+                    "sunrise": "05:48 AM",
+                    "sunset": "08:09 PM",
+                    "moonrise": "07:23 AM",
+                    "moonset": "09:35 PM"
+                }
+            },
+            {
+                "date": "2019-08-03",
+                "date_epoch": 1564790400,
+                "day": {
+                    "maxtemp_c": 26.2,
+                    "maxtemp_f": 79.2,
+                    "mintemp_c": 19.3,
+                    "mintemp_f": 66.7,
+                    "avgtemp_c": 22.3,
+                    "avgtemp_f": 72.1,
+                    "maxwind_mph": 5.4,
+                    "maxwind_kph": 8.6,
+                    "totalprecip_mm": 27.0,
+                    "totalprecip_in": 1.06,
+                    "avgvis_km": 7.8,
+                    "avgvis_miles": 4.0,
+                    "avghumidity": 89.0,
+                    "condition": {
+                        "text": "Light rain shower",
+                        "icon": "//cdn.apixu.com/weather/64x64/day/353.png",
+                        "code": 1240
+                    },
+                    "uv": 7.3
+                },
+                "astro": {
+                    "sunrise": "05:49 AM",
+                    "sunset": "08:07 PM",
+                    "moonrise": "08:39 AM",
+                    "moonset": "10:09 PM"
+                }
+            },
+            {
+                "date": "2019-08-04",
+                "date_epoch": 1564876800,
+                "day": {
+                    "maxtemp_c": 29.6,
+                    "maxtemp_f": 85.3,
+                    "mintemp_c": 19.6,
+                    "mintemp_f": 67.3,
+                    "avgtemp_c": 24.7,
+                    "avgtemp_f": 76.5,
+                    "maxwind_mph": 7.4,
+                    "maxwind_kph": 11.9,
+                    "totalprecip_mm": 1.1,
+                    "totalprecip_in": 0.04,
+                    "avgvis_km": 8.9,
+                    "avgvis_miles": 5.0,
+                    "avghumidity": 67.0,
+                    "condition": {
+                        "text": "Heavy rain at times",
+                        "icon": "//cdn.apixu.com/weather/64x64/day/305.png",
+                        "code": 1192
+                    },
+                    "uv": 1.2
+                },
+                "astro": {
+                    "sunrise": "05:50 AM",
+                    "sunset": "08:06 PM",
+                    "moonrise": "09:55 AM",
+                    "moonset": "10:41 PM"
+                }
+            },
+            {
+                "date": "2019-08-05",
+                "date_epoch": 1564963200,
+                "day": {
+                    "maxtemp_c": 28.2,
+                    "maxtemp_f": 82.8,
+                    "mintemp_c": 15.6,
+                    "mintemp_f": 60.1,
+                    "avgtemp_c": 22.1,
+                    "avgtemp_f": 71.8,
+                    "maxwind_mph": 5.8,
+                    "maxwind_kph": 9.4,
+                    "totalprecip_mm": 0.0,
+                    "totalprecip_in": 0.0,
+                    "avgvis_km": 10.0,
+                    "avgvis_miles": 6.0,
+                    "avghumidity": 54.0,
+                    "condition": {
+                        "text": "Partly cloudy",
+                        "icon": "//cdn.apixu.com/weather/64x64/day/116.png",
+                        "code": 1003
+                    },
+                    "uv": 6.0
+                },
+                "astro": {
+                    "sunrise": "05:51 AM",
+                    "sunset": "08:05 PM",
+                    "moonrise": "11:07 AM",
+                    "moonset": "11:12 PM"
+                }
+            }
+        ]
+    },
+    "alert": {
+        "headline": "Air Quality Alert issued July 30 at 8:41AM EDT by NWS",
+        "msgtype": "Alert",
+        "severity": "Unknown",
+        "urgency": "Unknown",
+        "areas": "Northern Fairfield; Northern Middlesex; Northern New Haven; Southern Fairfield",
+        "category": "Met",
+        "certainty": "Unknown",
+        "event": "Air Quality Alert",
+        "note": "Alert for Northern Fairfield; Northern Middlesex; Northern New Haven; Southern Fairfield (Connecticut) Issued by the National Weather Service",
+        "effective": "2019-07-30T10:32:00-04:00",
+        "expires": "2019-07-30T23:00:00-04:00",
+        "desc": "...AIR QUALITY ALERT IN EFFECT UNTIL 11 PM EDT THIS EVENING...\nThe Connecticut Department of Energy and Environmental Protection\nhas issued an Air Quality Action Day for the following counties...\nFairfield...Northern Middlesex...Northern New Haven.\nAn Air Quality Action Day means that Ground Level Ozone within the\nregion may approach or exceed unhealthy standards. For additional\ninformation...\nplease visit the Connecticut Department of Energy and Environmental\nProtection Web site at http://www.ct.gov/deep/aqi",
+        "instruction": ""
+    }
+}

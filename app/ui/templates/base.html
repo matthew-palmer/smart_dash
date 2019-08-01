@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<head>
+    <title>{% block title %}{% endblock %} · {{ config.DASHBOARD_NAME }}</title>
+    <meta charset="utf-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajaxorg.github.io/ace-builds/src/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.js"></script>
+
+<style>
+* {
+  border: none;
+  margin: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  //background: radial-gradient(#555, #111);
+}
+canvas {
+  background: white;
+  background: radial-gradient(#FFF, #DDD);
+  //background: radial-gradient(hsl(40, 80%, 60%), hsl(0, 50%, 40%));
+  //filter: blur(1px) contrast(5);
+  //transform: scale(0.1);
+  transform-origin: 0 0;
+  //border: solid .8em green;
+  width: 100%;
+  height: 100%;
+}
+.ui {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  padding: 10px;
+  background: rgba(255,255,255,0.7);
+
+  p {
+    //color: white;
+    font-size: 11px;
+    font-weight: 700;
+
+    &.zoom {
+      margin-bottom: 5px;
+
+      span {
+        margin-right: 5px;
+        border: solid 1px #777;
+        cursor: pointer;
+        border-radius: 2px;
+
+        &.zoomin {
+          padding: 2px 5px;
+        }
+        &.zoomout {
+          padding: 2px 8px;
+        }
+        &:hover {
+          background: black;
+          color: white;
+        }
+      }
+    }
+  }
+
+  span.zoom {
+
+
+  }
+}
+
+
+html {
+    overflow-y:scroll;
+    font-size: .8rem;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 30px;
+}
+.clock {
+    font-family: sans-serif;
+    text-decoration-color: white;
+    color: gray;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 9px;
+    padding-right: 5px;
+}
+
+.dashboard_background {
+    background: url({{url_for('static', filename='background.png')}});
+    background: linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)), url({{url_for('static', filename='background.png')}});
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-size: 65%;
+}
+
+/* Left and right column */
+.column.side {
+    width: 15%;
+}
+
+/* Middle column */
+.column.middle {
+    width: 70%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+}
+
+
+</style>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+        <img src="{{ url_for('static', filename='logo-color.png') }}" alt="{{ config.DASHBOARD_NAME }}" height="28px" width="150px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="ConfigDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Configuration
+                </a>
+                <div class="dropdown-menu" aria-labelledby="ConfigDropdown">
+                    <a class="dropdown-item" href="/exp">Environment Management</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/exp/ep">Add New PFS Environment</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="InformationalDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Informational
+                </a>
+                <div class="dropdown-menu" aria-labelledby="InformationalDropdown">
+                    <a class="dropdown-item" href="/weather">Example 1</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="AdminDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="AdminDropdown">
+                    <a class="dropdown-item" href="/api">API Swagger Docs</a>
+                    <a class="dropdown-item" href="/configure">Dashboard Configure</a>
+                    <a class="dropdown-item" href="/logs">Logs</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav navbar-right">
+            <li><div id="clock" class="clock"></div></li>
+        </ul>
+    </div>
+</nav>
+<a id="nav-top-button"></a>
+<body class="dashboard_background">
+    <div class='page'>
+        <div class='row'>
+            <ul>
+                {% for item in warnings %}
+                <li>
+                    <div class='list-group-item-warning'>
+                        {{ item }}
+                    </div>
+                </li>
+                {% endfor %}
+                {% if errors is defined %}
+                <li>
+                    <div class='list-group-item-danger'>
+                        {{ errors }}
+                    </div>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="column side">
+                {% block left_content %}{% endblock %}
+            </div>
+            <div class="column middle">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="column side">
+                {% block right_content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+function startTime() {
+  var today = new Date();
+  var D = today.getUTCDate();
+  var M = today.getUTCMonth();
+  var Y = today.getUTCFullYear();
+  var h = today.getUTCHours();
+  var m = today.getUTCMinutes();
+  var s = today.getUTCSeconds();
+
+  document.getElementById('clock').innerHTML = M + "/" + D + "/" + Y + "<br>" + h + ":" + m + ":" + s + " UTC";
+  var t = setTimeout(function() {
+    startTime()
+  }, 1000);
+}
+
+startTime()
+</script>
+
+
+<script>
+var btn = $('#nav-top-button');
+
+$(window).scroll(function() {
+    if ($(window).scrollTop() > 200) {
+        btn.addClass('show');
+    } else {
+        btn.removeClass('show');
+    }
+});
+
+btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '200');
+});
+</script>
