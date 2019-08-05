@@ -4,14 +4,20 @@
 {{ super() }}
 {% endblock %}
 {% block content %}
-<table style="width:100%;">
-    {% for day in forecast %}
-    <td>
-        <h6>{{ day['date'] }}</h6>
-        <h5>{{ day['day']['condition']['text']}}</h5>
-        <h7>Max:{{ day['day']['maxtemp_f']}} Min:{{ day['day']['mintemp_f']}}</h7>
-    </td>
-    {% endfor %}
+<h1>7 Day outlook</h1>
+<table class="weatherBlock" style="width:100%;border: 1px solid black;" >
+    <tr>
+        {% for day in forecast %}
+        <td>
+            <div class="weatherBlock">
+                <h6>{{ day['date'] }}</h6>
+                <img class="weatherCondition" src="http:{{day['day']['condition']['icon']}}">
+                <h7>{{ day['day']['maxtemp_f']}}<span>&#8457;</span>/{{ day['day']['mintemp_f']}}<span>&#8457;</span></h7>
+            </div>
+
+        </td>
+        {% endfor %}
+    </tr>
 </table>
 
 <h6 style="text-align:center;">{{location['name']}}</h6>

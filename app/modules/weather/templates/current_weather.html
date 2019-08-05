@@ -5,6 +5,9 @@
 {% endblock %}
 {% block content %}
 
-<h1 style="text-align:center;">{{weather['temp_f']}}</h1>
-<h6 style="text-align:center;">{{location['name']}}</h6>
+<div class="weatherBlock">
+    <img id="weatherCondition" style="text-align:center;" src="http:{{current['condition']['icon']}}">
+    <h1 style="text-align:center;">{{current['temp_f']}}</h1>
+    <h6 style="text-align:center;">{{location['name']}}</h6>
+</div>
 {% endblock %}

@@ -140,6 +140,19 @@ html {
         width: 100%;
     }
 }
+.weatherBlock table, th, td {
+    border: 1px solid black;
+}
+
+.weatherBlock img {
+    display : block;
+    margin : auto;
+}
+
+.weatherBlock h1 {
+    position: relative;
+}
+</style>
 
 
 </style>
@@ -161,7 +174,6 @@ html {
                 <div class="dropdown-menu" aria-labelledby="ConfigDropdown">
                     <a class="dropdown-item" href="/exp">Environment Management</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/exp/ep">Add New PFS Environment</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -169,7 +181,8 @@ html {
                 Informational
                 </a>
                 <div class="dropdown-menu" aria-labelledby="InformationalDropdown">
-                    <a class="dropdown-item" href="/weather">Example 1</a>
+                    <a class="dropdown-item" href="/weather">Current Weather</a>
+                    <a class="dropdown-item" href="/weather/forecast">7 Day Forecast</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

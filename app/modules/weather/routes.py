@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, current_app, render_template
+from flask import Blueprint, current_app, render_template
 from app.resource.cache import cache
 
 from .api import *
@@ -14,7 +14,7 @@ def get_weather_current():
                                           zipcode=current_app.config['W_ZIPCODE'],
                                           is_mock=current_app.config['IS_MOCK'])
     print(current_weather)
-    return render_template("current_weather.html", location=current_weather['location'], weather=current_weather['current'])
+    return render_template("current_weather.html", location=current_weather['location'], current=current_weather['current'])
 
 
 @weather_blueprint.route('/forecast')
