@@ -11,7 +11,7 @@ class Weather:
         self.api_token = str(API_TOKEN)
         self.base_url = kwargs['base_url'] if 'base_url' in kwargs else 'http://api.apixu.com'
         self.version = kwargs['version'] if 'version' in kwargs else 'v1'
-        self.zipcode = kwargs['zipcode'] if 'zipcode' in kwargs else '06770'
+        self.zipcode = kwargs['zipcode'] if 'zipcode' in kwargs else '06510'
         self.is_mock = kwargs['is_mock'] if 'is_mock' in kwargs else False
 
     def get_request_url(self, request_id):
