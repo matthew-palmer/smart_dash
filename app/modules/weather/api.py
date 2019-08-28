@@ -1,4 +1,4 @@
-from .resources.Weather import Weather
+from app.modules.weather.resources.base.Weather import Weather
 
 
 def get_current_weather(**kwargs):

@@ -15,11 +15,17 @@ W_MONTHLY_API_LIMIT = 10000
 W_API_CACHE_LIMIT = 2592000/W_MONTHLY_API_LIMIT
 W_BASE_URL = 'http://api.apixu.com'
 W_VERSION = 'v1'
-W_ZIPCODE = '06770'
+W_ZIPCODE = '06510'
 
 # UI
 DASHBOARD_NAME = 'SmartDash'
 VERSION = '0.1'
+
+# Notifications
+# Twilio
+TWILIO_SID = ''
+TWILIO_TOKEN = ''
+
 
 # DEBUG
 IS_MOCK = True
